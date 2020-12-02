@@ -4,8 +4,8 @@
 
 import itertools, re, operator
 
-data = [x.strip().split(':') for x in open('input').readlines()]
-data = itertools.starmap(lambda x, y: (y.strip(), re.split(' |-', x)), data)
+data = [x.strip().split(': ') for x in open('input').readlines()]
+data = itertools.starmap(lambda x, y: (y, re.split(' |-', x)), data)
 d1, d2 = itertools.tee(data)
 
 tdata = [('abcde', (1, 3, 'a')), ('cdefg', (1, 3, 'b')), ('ccccccccc', (2, 9, 'c'))]
