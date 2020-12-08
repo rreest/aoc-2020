@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Template for solution code 
+# Day 8 challenge 
 from intcode import run
 
 data = [n.strip('\n').split(' ') for n in open('input').readlines()]
