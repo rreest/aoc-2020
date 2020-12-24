@@ -44,9 +44,8 @@ print(part1(tmx.copy()))
 
 def part2(smx):
     from itertools import product
-    for _ in range(1):
-        print("hey")
-        # Expand cube
+    for _ in range(6):
+        # Expand tessaract
         smx = np.pad(smx, 1)
 
         # pad the data by 1
@@ -54,8 +53,8 @@ def part2(smx):
 
         for w in range(1, len(datp) - 1):
             for z in range(1, len(datp[0]) - 1):
-                for x in range(1, len(datp[1]) - 1):
-                    for y in range(1, len(datp[1]) - 1):
+                for x in range(1, len(datp[0][1]) - 1):
+                    for y in range(1, len(datp[0][1]) - 1):
                         slf = datp[w,z,x,y]
                         
                         neigh = 0
@@ -75,6 +74,7 @@ def part2(smx):
     return (smx).sum()
 
 
+# Part 2 - 2696
 smx = np.array([0])
 smx.resize((1, 1, len(tmx[0]), len(tmx[0])))
 smx[0] = tmx
